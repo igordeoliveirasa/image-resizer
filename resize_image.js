@@ -17,10 +17,11 @@ function resize(src_image, dst_image, width, height) {
   console.log("Saving at: " + dst_image);
 
   gm(src_image)
+  .options({imageMagick: true})
   .resize(width, height)
     .autoOrient()
     .write(dst_image, function (err) {
-        if (!err) console.log(' hoora! ');
+        if (!err) console.log('Done!');
     });
 }
 
